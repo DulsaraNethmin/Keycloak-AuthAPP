@@ -1,0 +1,21 @@
+services:
+  keycloak:
+    # image: quay.io/keycloak/keycloak:21.0.1
+    image: keycloak:v5
+    container_name: keycloak_auth
+    # command: start-dev
+    environment:
+      # KC_DB: mongodb
+      # KC_DB_URL_HOST: mongodb
+      # KC_DB_URL_DATABASE: keycloak
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+    ports:
+      - 8080:8080
+    # depends_on:
+    #   - mongodb
+    # mongodb:
+    #   image: mongo:6.0
+    #   container_name: mongodb
+    #   ports:
+    #     - 27017:27017
