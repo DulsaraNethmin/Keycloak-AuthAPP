@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 const useAuth = () => {
     const [isLogin, setIsLogin] = useState(false);
-    const [keycloak, setKeycloak] = useState(null);
+    const [keycloak, setKeycloak] = useState<Keycloak | null>(null);
 
     useEffect(() => {
         const client = new Keycloak({
